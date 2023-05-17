@@ -31,7 +31,7 @@ class AdoptionList extends StatelessWidget {
               SizedBox(height: 20.0),
               AbandonedAnimalComponent(
                 imageAddress:
-                    'https://i.namu.wiki/i/RiCUCV_HtU5RN7Phot9ReoyEoSZi_raPUGl_4Kiv8Wehl2TtRrho09b6eNL4GCiqbQL0xNF5h583okspIiE0gytamjsOVRdbMmeq5hsoOx2sfey_NzAKCom39a9SpzfTjKzYxMbYBmMe0X5kYfWYKA.webp',
+                    'https://images.mypetlife.co.kr/content/uploads/2019/09/09152804/ricky-kharawala-adK3Vu70DEQ-unsplash-1536x1018.jpg',
                 dogName: '햄찌',
                 breed: '골든 햄스터',
                 residence: '전라도 광주',
