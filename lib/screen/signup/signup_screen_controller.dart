@@ -11,6 +11,12 @@ class SignupScreenController extends GetxController {
 
   TextEditingController passwordTextController = TextEditingController();
 
+  TextEditingController petNameTextController = TextEditingController();
+
+  TextEditingController breedTextController = TextEditingController();
+
+  TextEditingController ageTextController = TextEditingController();
+
   @override
   void onInit() {
     // TODO: implement onInit
@@ -27,10 +33,16 @@ class SignupScreenController extends GetxController {
     print(emailTextController.text);
     print(idTextController.text);
     print(passwordTextController.text);
+    print(petNameTextController);
+    print(breedTextController);
+    print(ageTextController);
     dio.post("http://서버주소", data: {
       'email': emailTextController.text,
       'id': idTextController.text,
       'password': passwordTextController.text,
+      'petName': petNameTextController.text,
+      'breed': breedTextController.text,
+      'age': ageTextController.text,
     });
   }
 }

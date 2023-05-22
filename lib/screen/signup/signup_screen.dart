@@ -3,7 +3,6 @@ import 'package:anipet/screen/signup/signup_screen_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../component/big_logo.dart';
 import '../../component/bottom_button.dart';
 import '../../component/text_and_textfield.dart';
 import '../../const/colors.dart';
@@ -27,11 +26,7 @@ class SignUpScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                //logo
-                //Log in
-                //Email - ()
-                //Password - ()
-                BigLogo(),
+                //BigLogo(),
                 _Input(
                   emailTextController:
                       signupScreenController.emailTextController,
@@ -73,42 +68,71 @@ class _Input extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Sign up',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 25.0,
-              fontWeight: FontWeight.w700,
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 20.0, 0, 0),
+              child: Text(
+                'Sign up',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
             ),
-          ),
-          SizedBox(
-            height: 30.0,
-          ),
-          TextAndTextField(
-            textString: 'Email',
-            isObsecureTextTrue: false,
-            textEditingController: emailTextController,
-          ),
-          SizedBox(
-            height: 30.0,
-          ),
-          TextAndTextField(
-            textString: 'Id',
-            isObsecureTextTrue: false,
-            textEditingController: idTextController,
-          ),
-          SizedBox(
-            height: 30.0,
-          ),
-          TextAndTextField(
-            textString: 'Password',
-            isObsecureTextTrue: true,
-            textEditingController: passwordTextController,
-          ),
-        ],
+            SizedBox(
+              height: 30.0,
+            ),
+            TextAndTextField(
+              textString: 'Email',
+              isObsecureTextTrue: false,
+              textEditingController: emailTextController,
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            TextAndTextField(
+              textString: 'Id',
+              isObsecureTextTrue: false,
+              textEditingController: idTextController,
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            TextAndTextField(
+              textString: 'Password',
+              isObsecureTextTrue: true,
+              textEditingController: passwordTextController,
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            TextAndTextField(
+              textString: 'Pet Name',
+              isObsecureTextTrue: true,
+              textEditingController: passwordTextController,
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            TextAndTextField(
+              textString: 'Breed',
+              isObsecureTextTrue: true,
+              textEditingController: passwordTextController,
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            TextAndTextField(
+              textString: 'Age',
+              isObsecureTextTrue: true,
+              textEditingController: passwordTextController,
+            ),
+          ],
+        ),
       ),
     );
   }

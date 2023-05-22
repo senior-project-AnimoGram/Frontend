@@ -47,7 +47,7 @@ class HospitalReservationScreen extends StatelessWidget {
             height: 30.0,
           ),
           _TextAndTextField(
-            textString: '진료 동물 이름',
+            textString: '동물 이름',
             isObsecureTextTrue: false,
             textEditingController:
                 hospitalReservationController.petNameTextController,
@@ -56,10 +56,19 @@ class HospitalReservationScreen extends StatelessWidget {
             height: 30.0,
           ),
           _TextAndTextField(
-            textString: '진료 동물 종',
+            textString: '종',
             isObsecureTextTrue: false,
             textEditingController:
                 hospitalReservationController.breedTextController,
+          ),
+          const SizedBox(
+            height: 30.0,
+          ),
+          _TextAndTextField(
+            textString: '나이',
+            isObsecureTextTrue: false,
+            textEditingController:
+                hospitalReservationController.ageTextController,
           ),
           const SizedBox(
             height: 30.0,
@@ -77,7 +86,7 @@ class HospitalReservationScreen extends StatelessWidget {
             onPressed: () {
               hospitalReservationController
                   .onHospitalReservationButtonClicked();
-              Get.offAll(() => MainScreen());
+              Get.to(() => MainScreen());
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.black,

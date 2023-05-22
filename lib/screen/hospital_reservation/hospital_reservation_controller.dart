@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HospitalReservationController extends GetxController {
-
   TextEditingController hospitalNameTextController = TextEditingController();
   TextEditingController reservationDayTextController = TextEditingController();
   TextEditingController reservationTimeTextController = TextEditingController();
 
   TextEditingController petNameTextController = TextEditingController();
   TextEditingController breedTextController = TextEditingController();
+  TextEditingController ageTextController = TextEditingController();
   TextEditingController visitingReasonTextController = TextEditingController();
 
   @override
@@ -23,7 +23,5 @@ class HospitalReservationController extends GetxController {
     super.onReady();
   }
 
-  void onHospitalReservationButtonClicked() {
-
-  }
+  void onHospitalReservationButtonClicked() {}
 }

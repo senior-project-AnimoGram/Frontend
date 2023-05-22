@@ -1,4 +1,8 @@
+import 'package:anipet/screen/hospital_reservation_record.dart';
+import 'package:anipet/screen/my_information.dart';
+import 'package:anipet/screen/my_post.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HamburgerButton extends StatelessWidget {
   const HamburgerButton({Key? key}) : super(key: key);
@@ -32,9 +36,9 @@ class HamburgerButton extends StatelessWidget {
               Icons.home,
               color: Colors.grey[850],
             ),
-            title: Text('개인정보'),
+            title: Text('나의 정보'),
             onTap: () {
-              print('Home button is clicked!');
+              Get.to(() => MyInformation());
             },
             trailing: Icon(Icons.add),
           ),
@@ -45,7 +49,7 @@ class HamburgerButton extends StatelessWidget {
             ),
             title: Text('내 게시글'),
             onTap: () {
-              print('settings button is clicked!');
+              Get.to(() => MyPost());
             },
             trailing: Icon(Icons.add),
           ),
@@ -54,9 +58,9 @@ class HamburgerButton extends StatelessWidget {
               Icons.settings,
               color: Colors.grey[850],
             ),
-            title: Text('세팅'),
+            title: Text('병원예약 기록'),
             onTap: () {
-              print('Q&A button is clicked!');
+              Get.to(() => HospitalReservationRecord());
             },
             trailing: Icon(Icons.add),
           ),

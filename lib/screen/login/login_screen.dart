@@ -1,5 +1,3 @@
-import 'package:anipet/screen/login/login_screen_controller.dart';
-import 'package:anipet/screen/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -7,6 +5,8 @@ import '../../component/big_logo.dart';
 import '../../component/bottom_button.dart';
 import '../../component/text_and_textfield.dart';
 import '../../const/colors.dart';
+import '../main_screen/main_screen.dart';
+import 'login_screen_controller.dart';
 
 class LogInScreen extends StatelessWidget {
   const LogInScreen({Key? key}) : super(key: key);
@@ -39,7 +39,7 @@ class LogInScreen extends StatelessWidget {
                 BottomButton(
                   buttonName: 'LOGIN',
                   onPressed: () {
-                    Get.offAll(() => SignUpScreen());
+                    Get.offAll(() => MainScreen());
                     loginScreenController.onLoginButtonClick();
                   },
                 ),
