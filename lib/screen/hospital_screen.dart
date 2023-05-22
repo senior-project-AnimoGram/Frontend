@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 import '../component/geolocation.dart';
 import '../component/hospital_component.dart';
-import '../component/search_bar.dart';
+import '../component/top_search_bar.dart';
 
 class HospitalScreen extends StatelessWidget {
   const HospitalScreen({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class HospitalScreen extends StatelessWidget {
         SizedBox(
           height: 10.0,
         ),
-        SearchBar(),
+        TopSearchBar(),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../component/adoption_list.dart';
-import '../component/search_bar.dart';
+import '../component/top_search_bar.dart';
 
 class AdoptionScreen extends StatelessWidget {
   const AdoptionScreen({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class AdoptionScreen extends StatelessWidget {
         SizedBox(
           height: 10.0,
         ),
-        SearchBar(),
+        TopSearchBar(),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
