@@ -12,7 +12,7 @@ class BottomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 40.0),
+      padding: const EdgeInsets.only(bottom: 40.0),
       child: ElevatedButton(
         onPressed: onPressed,
         child: Text(buttonName),

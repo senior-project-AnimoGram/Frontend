@@ -25,7 +25,7 @@ class TextAndTextField extends StatelessWidget {
       fillColor: Colors.white,
       //labelText: 'Email',
     );
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,7 +37,7 @@ class TextAndTextField extends StatelessWidget {
           const SizedBox(
             height: 10.0,
           ),
-          Container(
+          SizedBox(
             height: 40.0,
             width: 400.0,
             child: TextField(

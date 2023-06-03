@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../screen/add_post_screen.dart';
+import '../screen/add_post/add_post_screen.dart';
 
 class StatusBar extends StatelessWidget {
   final String comment;
@@ -15,10 +15,10 @@ class StatusBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.offAll(() => AddPostScreen());
+        Get.to(() => const AddPostScreen());
       },
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Container(
           height: 40.0,
           width: MediaQuery.of(context).size.width,
@@ -31,10 +31,10 @@ class StatusBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(comment),
-              SizedBox(
+              const SizedBox(
                 width: 20.0,
               ),
-              Icon(
+              const Icon(
                 Icons.add_box_outlined,
               )
             ],

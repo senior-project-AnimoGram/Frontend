@@ -24,7 +24,7 @@ class PostComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         border: Border(
             top: BorderSide(
           color: Colors.grey,
@@ -35,7 +35,7 @@ class PostComponent extends StatelessWidget {
         children: [
           Row(
             children: [
-              SizedBox(
+              const SizedBox(
                 width: 5.0,
               ),
               Padding(
@@ -57,12 +57,12 @@ class PostComponent extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 5.0,
               ),
               Text(
                 id,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14.0,
                   fontWeight: FontWeight.w500,
                 ),
@@ -75,32 +75,32 @@ class PostComponent extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             fit: BoxFit.cover,
           ),
-          SizedBox(
+          const SizedBox(
             height: 8.0,
           ),
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 15.0,
               fontWeight: FontWeight.w600,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5.0,
           ),
           Text(content),
-          SizedBox(
+          const SizedBox(
             height: 5.0,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Icon(
+              const Icon(
                 Icons.mode_comment,
                 color: Colors.black87,
               ),
               Text(numberOfComment.toString()),
-              Icon(
+              const Icon(
                 Icons.favorite,
                 color: Colors.red,
               ),

@@ -1,3 +1,4 @@
+import 'package:anipet/const/identification.dart';
 import 'package:anipet/screen/hospital_record_component.dart';
 import 'package:flutter/material.dart';
 
@@ -6,17 +7,17 @@ class HospitalRecordList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       child: Column(
         children: [
           HospitalRecordComponent(
-            hospitalName: '도그마루 병원',
-            reservationDay: '2023.05.03',
-            reservationTime: '13:30',
-            petName: '구아나',
-            breed: '이구아나',
-            age: '3',
-            visitingReason: '먹이를 먹지 않음',
+            hospitalName: TEST_HOSPITAL_NAME,
+            reservationDay: TEST_RESERVATION_DAY,
+            reservationTime: TEST_RESERVATION_TIME,
+            petName: TEST_PET_NAME,
+            breed: TEST_BREED,
+            age: TEST_AGE,
+            visitingReason: TEST_VISITING_REASON,
           ),
         ],
       ),

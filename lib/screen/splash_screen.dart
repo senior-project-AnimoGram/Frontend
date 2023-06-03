@@ -12,7 +12,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MAIN_IVORY_COLOR,
-      body: Container(
+      body: SizedBox(
         width: MediaQuery.of(context).size.width,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -23,10 +23,10 @@ class SplashScreen extends StatelessWidget {
               width: 200.0,
               height: 200.0,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30.0,
             ),
-            Text(
+            const Text(
               'Ani Pet',
               style: TextStyle(
                 color: Colors.black,
@@ -34,10 +34,10 @@ class SplashScreen extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15.0,
             ),
-            Text(
+            const Text(
               '애완동물의 모든 것',
               style: TextStyle(
                 color: Colors.black,
@@ -45,37 +45,35 @@ class SplashScreen extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50.0,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
+                SizedBox(
                   width: 90.0,
                   height: 38.0,
                   child: ElevatedButton(
                     onPressed: () {
-                      Get.offAll(() => LogInScreen());
+                      Get.offAll(() => const LogInScreen());
                     },
-                    child: Text('Log In'),
-                    style:
-                        ElevatedButton.styleFrom(backgroundColor: Colors.grey),
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.grey),
+                    child: const Text('Log In'),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 35.0,
                 ),
-                Container(
+                SizedBox(
                   width: 90.0,
                   height: 38.0,
                   child: ElevatedButton(
                     onPressed: () {
-                      Get.offAll(() => SignUpScreen());
+                      Get.offAll(() => const SignUpScreen());
                     },
-                    child: Text('Sign Up'),
-                    style:
-                        ElevatedButton.styleFrom(backgroundColor: Colors.grey),
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.grey),
+                    child: const Text('Sign Up'),
                   ),
                 ),
               ],

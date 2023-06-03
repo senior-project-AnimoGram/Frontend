@@ -1,6 +1,8 @@
-import 'package:anipet/screen/hospital_reservation_record.dart';
-import 'package:anipet/screen/my_information.dart';
-import 'package:anipet/screen/my_post.dart';
+import 'package:anipet/const/identification.dart';
+import 'package:anipet/main.dart';
+import 'package:anipet/screen/hospital_reservation_record/hospital_reservation_record.dart';
+import 'package:anipet/screen/my_information/my_information.dart';
+import 'package:anipet/screen/my_post/my_post.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,18 +16,18 @@ class HamburgerButton extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           UserAccountsDrawerHeader(
-            currentAccountPicture: CircleAvatar(
+            currentAccountPicture: const CircleAvatar(
               backgroundColor: Colors.white,
-              backgroundImage: AssetImage('asset/img/logo.png'),
+              backgroundImage: AssetImage(TEST_PROFILE_IMG),
             ),
-            accountName: Text('Pet lover'),
-            accountEmail: Text('petloverforever@naver.com'),
+            accountName: const Text(TEST_ID),
+            accountEmail: const Text(TEST_EMAIL),
             onDetailsPressed: () {
-              print('Hello, My Hope World!');
+              Common.logger.d('Hello, My Hope World!');
             },
             decoration: BoxDecoration(
               color: Colors.red[200],
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(40.0),
                 bottomRight: Radius.circular(40.0),
               ),
@@ -36,33 +38,33 @@ class HamburgerButton extends StatelessWidget {
               Icons.home,
               color: Colors.grey[850],
             ),
-            title: Text('나의 정보'),
+            title: const Text('나의 정보'),
             onTap: () {
-              Get.to(() => MyInformation());
+              Get.to(() => const MyInformation());
             },
-            trailing: Icon(Icons.add),
+            trailing: const Icon(Icons.add),
           ),
           ListTile(
             leading: Icon(
               Icons.question_answer,
               color: Colors.grey[850],
             ),
-            title: Text('내 게시글'),
+            title: const Text('내 게시글'),
             onTap: () {
-              Get.to(() => MyPost());
+              Get.to(() => const MyPost());
             },
-            trailing: Icon(Icons.add),
+            trailing: const Icon(Icons.add),
           ),
           ListTile(
             leading: Icon(
               Icons.settings,
               color: Colors.grey[850],
             ),
-            title: Text('병원예약 기록'),
+            title: const Text('병원예약 기록'),
             onTap: () {
-              Get.to(() => HospitalReservationRecord());
+              Get.to(() => const HospitalReservationRecord());
             },
-            trailing: Icon(Icons.add),
+            trailing: const Icon(Icons.add),
           ),
         ],
       ),

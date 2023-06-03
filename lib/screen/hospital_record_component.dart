@@ -22,10 +22,10 @@ class HospitalRecordComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle categoryStyle = TextStyle(
+    const TextStyle categoryStyle = TextStyle(
       fontSize: 16.5,
     );
-    final double categoryWidth = 100;
+    const double categoryWidth = 100;
     return Container(
       decoration: BoxDecoration(
         border: Border.all(
@@ -45,13 +45,13 @@ class HospitalRecordComponent extends StatelessWidget {
                 Text(
                   hospitalName, //병원 이름
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 30.0,
                 ),
                 Text(
                   reservationDay, //예약 날짜
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20.0,
                 ),
                 Text(
@@ -59,9 +59,10 @@ class HospitalRecordComponent extends StatelessWidget {
                 ),
               ],
             ),
+            const SizedBox(height: 10.0),
             Row(
               children: [
-                Container(
+                const SizedBox(
                   width: categoryWidth,
                   child: Text(
                     '동물 이름', //동물 이름
@@ -70,12 +71,9 @@ class HospitalRecordComponent extends StatelessWidget {
                 Text(petName),
               ],
             ),
-            SizedBox(
-              height: 10.0,
-            ),
             Row(
               children: [
-                Container(
+                const SizedBox(
                   width: categoryWidth,
                   child: Text(
                     '종',
@@ -84,27 +82,27 @@ class HospitalRecordComponent extends StatelessWidget {
                 Text(breed),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10.0,
             ),
             Row(
               children: [
-                Container(
+                const SizedBox(
                   width: categoryWidth,
                   child: Text(
                     '나이',
                   ),
                 ),
                 Text(age),
-                Text('세'),
+                const Text('세'),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10.0,
             ),
             Row(
               children: [
-                Container(
+                const SizedBox(
                   width: categoryWidth,
                   child: Text(
                     '병원 방문 사유', //병원 방문사유

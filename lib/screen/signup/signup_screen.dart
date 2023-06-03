@@ -1,4 +1,4 @@
-import 'package:anipet/screen/main_screen/main_screen.dart';
+import 'package:anipet/screen/add_mypet/add_mypet_screen.dart';
 import 'package:anipet/screen/signup/signup_screen_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,8 +12,7 @@ class SignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final SignupScreenController signupScreenController =
-        Get.put(SignupScreenController());
+    final SignupScreenController signupScreenController = Get.put(SignupScreenController());
     return Scaffold(
       backgroundColor: MAIN_IVORY_COLOR,
       body: SafeArea(
@@ -26,22 +25,17 @@ class SignUpScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                //BigLogo(),
+                //const BigLogo(),
                 _Input(
-                  emailTextController:
-                      signupScreenController.emailTextController,
+                  emailTextController: signupScreenController.emailTextController,
                   idTextController: signupScreenController.idTextController,
-                  passwordTextController:
-                      signupScreenController.passwordTextController,
+                  passwordTextController: signupScreenController.passwordTextController,
                 ),
                 BottomButton(
                   buttonName: 'SIGNUP',
                   onPressed: () {
-                    Get.offAll(() => MainScreen());
-                    // Navigator.of(context).push(
-                    //   MaterialPageRoute(
-                    //       builder: (BuildContext context) => HospitalScreen()),
-                    // );
+                    Get.to(() => const AddMypetScreen());
+                    signupScreenController.onSignupButtonClick();
                   },
                 ),
               ],
@@ -58,12 +52,7 @@ class _Input extends StatelessWidget {
   final TextEditingController idTextController;
   final TextEditingController passwordTextController;
 
-  const _Input(
-      {required this.emailTextController,
-      required this.idTextController,
-      required this.passwordTextController,
-      Key? key})
-      : super(key: key);
+  const _Input({required this.emailTextController, required this.idTextController, required this.passwordTextController, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -72,8 +61,8 @@ class _Input extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0, 20.0, 0, 0),
+            const Padding(
+              padding: EdgeInsets.only(top: 20),
               child: Text(
                 'Sign up',
                 style: TextStyle(
@@ -83,7 +72,7 @@ class _Input extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30.0,
             ),
             TextAndTextField(
@@ -91,7 +80,7 @@ class _Input extends StatelessWidget {
               isObsecureTextTrue: false,
               textEditingController: emailTextController,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30.0,
             ),
             TextAndTextField(
@@ -99,7 +88,7 @@ class _Input extends StatelessWidget {
               isObsecureTextTrue: false,
               textEditingController: idTextController,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30.0,
             ),
             TextAndTextField(
@@ -107,29 +96,8 @@ class _Input extends StatelessWidget {
               isObsecureTextTrue: true,
               textEditingController: passwordTextController,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30.0,
-            ),
-            TextAndTextField(
-              textString: 'Pet Name',
-              isObsecureTextTrue: true,
-              textEditingController: passwordTextController,
-            ),
-            SizedBox(
-              height: 30.0,
-            ),
-            TextAndTextField(
-              textString: 'Breed',
-              isObsecureTextTrue: true,
-              textEditingController: passwordTextController,
-            ),
-            SizedBox(
-              height: 30.0,
-            ),
-            TextAndTextField(
-              textString: 'Age',
-              isObsecureTextTrue: true,
-              textEditingController: passwordTextController,
             ),
           ],
         ),

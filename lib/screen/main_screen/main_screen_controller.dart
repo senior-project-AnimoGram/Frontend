@@ -11,12 +11,18 @@ class MainScreenController extends GetxController {
   RxList<Widget> pages = RxList();
   RxInt pageIndex = 0.obs;
 
+  RxBool hospitalState = true.obs;
+  RxBool adoptionState = false.obs;
+  RxBool communityState = false.obs;
+  RxBool tipState = false.obs;
+
   @override
   void onInit() {
-    pages.add(HospitalScreen());
-    pages.add(AdoptionScreen());
-    pages.add(CommunityScreen());
-    pages.add(TipScreen());
+    pages.add(const HospitalScreen());
+    pages.add(const AdoptionScreen());
+    pages.add(const CommunityScreen());
+    pages.add(const TipScreen());
+
     super.onInit();
   }
 }

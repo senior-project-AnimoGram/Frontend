@@ -1,18 +1,18 @@
+import 'package:anipet/screen/add_mypet/add_mypet_controller.dart';
+import 'package:anipet/screen/main_screen/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../component/bottom_button.dart';
 import '../../component/text_and_textfield.dart';
 import '../../const/colors.dart';
-import '../main_screen/main_screen.dart';
-import 'login_screen_controller.dart';
 
-class LogInScreen extends StatelessWidget {
-  const LogInScreen({Key? key}) : super(key: key);
+class AddMypetScreen extends StatelessWidget {
+  const AddMypetScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final LoginScreenController loginScreenController = Get.put(LoginScreenController());
+    final AddMypetController addMypetController = Get.put(AddMypetController());
     return Scaffold(
       backgroundColor: MAIN_IVORY_COLOR,
       body: SafeArea(
@@ -26,12 +26,16 @@ class LogInScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 //const BigLogo(),
-                _Input(idTextController: loginScreenController.idTextController, passwordTextController: loginScreenController.passwordTextController),
+                _Input(
+                  petNameTextController: addMypetController.petNameTextController,
+                  breedTextController: addMypetController.breedTextController,
+                  ageTextController: addMypetController.ageTextController,
+                ),
                 BottomButton(
-                  buttonName: 'LOGIN',
+                  buttonName: 'Add My Pet',
                   onPressed: () {
                     Get.offAll(() => const MainScreen());
-                    loginScreenController.onLoginButtonClick();
+                    addMypetController.onAddMypetButtonClicked();
                   },
                 ),
               ],
@@ -44,10 +48,11 @@ class LogInScreen extends StatelessWidget {
 }
 
 class _Input extends StatelessWidget {
-  final TextEditingController idTextController;
-  final TextEditingController passwordTextController;
+  final TextEditingController petNameTextController;
+  final TextEditingController breedTextController;
+  final TextEditingController ageTextController;
 
-  const _Input({required this.idTextController, required this.passwordTextController, Key? key}) : super(key: key);
+  const _Input({required this.petNameTextController, required this.breedTextController, required this.ageTextController, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,9 +62,9 @@ class _Input extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Padding(
-              padding: EdgeInsets.only(top: 20.0),
+              padding: EdgeInsets.only(top: 20),
               child: Text(
-                'Log In',
+                'My Pet',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 25.0,
@@ -71,17 +76,28 @@ class _Input extends StatelessWidget {
               height: 30.0,
             ),
             TextAndTextField(
-              textString: 'Id',
+              textString: 'Pet Name',
               isObsecureTextTrue: false,
-              textEditingController: idTextController,
+              textEditingController: petNameTextController,
             ),
             const SizedBox(
               height: 30.0,
             ),
             TextAndTextField(
-              textString: 'Password',
+              textString: 'Breed',
+              isObsecureTextTrue: false,
+              textEditingController: breedTextController,
+            ),
+            const SizedBox(
+              height: 30.0,
+            ),
+            TextAndTextField(
+              textString: 'Age',
               isObsecureTextTrue: true,
-              textEditingController: passwordTextController,
+              textEditingController: ageTextController,
+            ),
+            const SizedBox(
+              height: 30.0,
             ),
           ],
         ),

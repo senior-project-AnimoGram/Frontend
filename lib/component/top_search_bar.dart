@@ -6,17 +6,17 @@ class TopSearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 15.0),
+      padding: const EdgeInsets.only(left: 15.0),
       child: Row(
         children: [
-          Container(
+          SizedBox(
             height: 35.0,
             width: MediaQuery.of(context).size.width - 65.0,
             child: TextField(
               obscureText: false,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     width: 1.0,
                     color: Colors.grey,
                   ),
@@ -30,7 +30,7 @@ class TopSearchBar extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
         ],
       ),
