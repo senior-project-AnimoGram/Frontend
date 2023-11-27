@@ -27,19 +27,25 @@ class FourCircularImagesRow extends StatelessWidget {
           imagePaths.length,
               (index) => Padding(
             padding: const EdgeInsets.all(5.0),
-            child: Column(
-              children: [
-                CircleAvatar(
-                  radius: 30.0,
-                  backgroundImage: NetworkImage(imagePaths[index]),
+                child: InkWell(
+                  onTap: () {
+                    // 강아지 종류별로 정렬하는 이벤트 핸들러
+                    print('Button $index pressed');
+                  },
+                  child: Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 30.0,
+                        backgroundImage: NetworkImage(imagePaths[index]),
+                      ),
+                      SizedBox(height: 5.0),
+                      Text(
+                        imageTitles[index],
+                        style: TextStyle(fontSize: 10.0),
+                      ),
+                    ],
+                  ),
                 ),
-                SizedBox(height: 5.0),
-                Text(
-                  imageTitles[index],
-                  style: TextStyle(fontSize: 10.0),
-                ),
-              ],
-            ),
           ),
         ),
       ),
