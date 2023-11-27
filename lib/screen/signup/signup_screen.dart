@@ -76,7 +76,15 @@ class _Input extends StatelessWidget {
               height: 30.0,
             ),
             TextAndTextField(
-              textString: 'Email',
+              textString: 'Name',
+              isObsecureTextTrue: false,
+              textEditingController: emailTextController,
+            ),
+            const SizedBox(
+              height: 30.0,
+            ),
+            TextAndTextField(
+              textString: 'Phone Number',
               isObsecureTextTrue: false,
               textEditingController: emailTextController,
             ),

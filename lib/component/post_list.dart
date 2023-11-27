@@ -1,6 +1,7 @@
 import 'package:anipet/component/post_component.dart';
 import 'package:anipet/const/identification.dart';
 import 'package:flutter/material.dart';
+import 'package:toggle_switch/toggle_switch.dart';
 
 class FourCircularImagesRow extends StatelessWidget {
   final List<String> imagePaths = [
@@ -9,13 +10,13 @@ class FourCircularImagesRow extends StatelessWidget {
     'https://mblogthumb-phinf.pstatic.net/MjAyMTA4MTFfMTE3/MDAxNjI4NjcyNzQ4NTQ2.T133t6tAHabBzWbppx5iOuzADghEdCnVcwyk9nU3vNYg.Q_0VVTFcTHzZmYjqyAgufTrTgjEEJxlegvGqBoFLzq8g.JPEG.goodnonz/SE-783ce041-69f0-43eb-81c1-73591a7054a6.jpg?type=w800',
     'https://animalspet.co.kr/web/product/medium/202303/87006965eb2422d857fa7b69f471a7cd.jpg',
   ];
-
   final List<String> imageTitles = [
     '골든 리트리버',
     '웰시코기',
     '사모예드',
     '포메라니안',
   ];
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -45,9 +46,15 @@ class FourCircularImagesRow extends StatelessWidget {
     );
   }
 }
-
-class PostList extends StatelessWidget {
+class PostList extends StatefulWidget {
   const PostList({Key? key}) : super(key: key);
+
+  @override
+  _PostListState createState() => _PostListState();
+}
+
+class _PostListState extends State<PostList> {
+  int? _selectedButton = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -59,6 +66,21 @@ class PostList extends StatelessWidget {
             children: [
               FourCircularImagesRow(),
               SizedBox(height: 20.0),
+              ToggleSwitch(
+                minWidth: 80.0,
+                initialLabelIndex: _selectedButton,
+                cornerRadius: 30.0,
+                activeFgColor: Colors.white,
+                inactiveBgColor: Colors.grey[200],
+                inactiveFgColor: Colors.black,
+                labels: ['추천', '팔로우'],
+                onToggle: (index) {
+                  setState(() {
+                    _selectedButton = index;
+                  });
+                },
+              ),
+              SizedBox(height: 10.0),
               PostComponent(
                 id: 'love_pet',
                 profileImg: TEST_PROFILE_IMG,
@@ -78,9 +100,36 @@ class PostList extends StatelessWidget {
                 numberOfComment: 5,
                 numberOflikes: 17,
               ),
-              SizedBox(height: 20.0),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class RoundedButton extends StatelessWidget {
+  final String label;
+
+  const RoundedButton({Key? key, required this.label}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 80.0,
+      child: ElevatedButton(
+        onPressed: () {
+          // Handle button press
+        },
+        style: ElevatedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(vertical: 15.0),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+        ),
+        child: Text(
+          label,
+          style: TextStyle(fontSize: 12.0),
         ),
       ),
     );
