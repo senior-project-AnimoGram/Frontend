@@ -15,7 +15,7 @@ class AddPostScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.grey[400],
         title: const Text(
-          'Add Hospital',
+          'Add Post',
           style: TextStyle(
             fontSize: 20.0,
             fontWeight: FontWeight.w600,
@@ -68,6 +68,7 @@ class AddPostScreen extends StatelessWidget {
                 textString: 'Content',
                 isObsecureTextTrue: false,
                 textEditingController: addPostController.contentTextEditingController,
+
               ),
               const SizedBox(
                 height: 30.0,

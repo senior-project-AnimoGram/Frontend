@@ -2,17 +2,63 @@ import 'package:anipet/component/post_component.dart';
 import 'package:anipet/const/identification.dart';
 import 'package:flutter/material.dart';
 
+class FourCircularImagesRow extends StatelessWidget {
+  final List<String> imagePaths = [
+    'https://media.istockphoto.com/id/509052128/ko/%EC%82%AC%EC%A7%84/%EA%B3%A8%EB%93%A0-%EB%A6%AC%ED%8A%B8%EB%A6%AC%EB%B2%84-%EC%95%89%EC%95%84-%ED%9D%B0%EC%83%89-%EB%B0%B0%EA%B2%BD-%EC%A0%84%EB%A9%B4-a.jpg?s=612x612&w=0&k=20&c=VY8wVdZV1XTw-Aq4iPhfTFu4hBeFJgQonj2qlAvbo4Q=',
+    'https://cdn.pet-news.or.kr/news/photo/202304/2903_4444_3536.jpg',
+    'https://mblogthumb-phinf.pstatic.net/MjAyMTA4MTFfMTE3/MDAxNjI4NjcyNzQ4NTQ2.T133t6tAHabBzWbppx5iOuzADghEdCnVcwyk9nU3vNYg.Q_0VVTFcTHzZmYjqyAgufTrTgjEEJxlegvGqBoFLzq8g.JPEG.goodnonz/SE-783ce041-69f0-43eb-81c1-73591a7054a6.jpg?type=w800',
+    'https://animalspet.co.kr/web/product/medium/202303/87006965eb2422d857fa7b69f471a7cd.jpg',
+  ];
+
+  final List<String> imageTitles = [
+    '골든 리트리버',
+    '웰시코기',
+    '사모예드',
+    '포메라니안',
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: List.generate(
+          imagePaths.length,
+              (index) => Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: Column(
+              children: [
+                CircleAvatar(
+                  radius: 30.0,
+                  backgroundImage: NetworkImage(imagePaths[index]),
+                ),
+                SizedBox(height: 5.0),
+                Text(
+                  imageTitles[index],
+                  style: TextStyle(fontSize: 10.0),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class PostList extends StatelessWidget {
   const PostList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return  Expanded(
+    return Expanded(
       child: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15.0),
-          child:  Column(
+          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          child: Column(
             children: [
+              FourCircularImagesRow(),
+              SizedBox(height: 20.0),
               PostComponent(
                 id: 'love_pet',
                 profileImg: TEST_PROFILE_IMG,
