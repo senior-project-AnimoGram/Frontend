@@ -27,7 +27,7 @@ class SplashScreen extends StatelessWidget {
               height: 30.0,
             ),
             const Text(
-              'Ani Pet',
+              'AniMogram',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 35.0,
@@ -38,7 +38,7 @@ class SplashScreen extends StatelessWidget {
               height: 15.0,
             ),
             const Text(
-              '애완동물의 모든 것',
+              '',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 15.0,
@@ -52,7 +52,7 @@ class SplashScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: 90.0,
+                  width: 100.0,
                   height: 38.0,
                   child: ElevatedButton(
                     onPressed: () {
@@ -66,7 +66,7 @@ class SplashScreen extends StatelessWidget {
                   width: 35.0,
                 ),
                 SizedBox(
-                  width: 90.0,
+                  width: 100.0,
                   height: 38.0,
                   child: ElevatedButton(
                     onPressed: () {
