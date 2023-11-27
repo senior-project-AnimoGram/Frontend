@@ -7,11 +7,11 @@ class PostList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Expanded(
+    return  Expanded(
       child: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.0),
-          child: Column(
+          child:  Column(
             children: [
               PostComponent(
                 id: 'love_pet',

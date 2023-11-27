@@ -17,7 +17,7 @@ class HospitalScreen extends StatefulWidget {
 class _HospitalScreenState extends State<HospitalScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return  Column(
       children: [
         SizedBox(
           height: 10.0,
@@ -139,10 +139,10 @@ class HospitalList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Expanded(
+    return  Expanded(
       child: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
-        child: Column(
+        child:  Column(
           children: [
             HospitalComponent(
               hospitalName: '에코특수동물병원',

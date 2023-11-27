@@ -7,11 +7,11 @@ class AdoptionList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Expanded(
+    return  Expanded(
       child: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.0),
-          child: Column(
+          child:  Column(
             children: [
               AbandonedAnimalComponent(
                 imageUrl: 'http://www.spet1004.com/data/file/spet/thumb-3740049230_70yd4sAh_f6cb79aa56e48afd9d39dbac6ea4e10557e4cdc1_1000x667.jpg',

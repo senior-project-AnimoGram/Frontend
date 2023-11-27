@@ -20,7 +20,7 @@ class HospitalReservationRecord extends StatelessWidget {
       body: SafeArea(
         child: SizedBox(
           width: MediaQuery.of(context).size.width,
-          child: const Padding(
+          child:  Padding(
             padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
             child: Column(
               children: [

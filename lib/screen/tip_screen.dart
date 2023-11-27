@@ -8,7 +8,7 @@ class TipScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return  Column(
       children: [
         // TopMenuBar(),
         SizedBox(height: 10.0),
@@ -25,11 +25,11 @@ class TipList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Expanded(
+    return  Expanded(
       child: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.0),
-          child: Column(
+          child:  Column(
             children: [
               TipComponent(
                 tipTitle: '이구아나가 잘 먹지 않아요',

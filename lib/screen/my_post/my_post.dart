@@ -107,19 +107,19 @@ class MyProfile extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Column(
+                   Column(
                     children: [
                       Text('1'),
                       Text('게시물'),
                     ],
                   ),
-                  const Column(
+                   Column(
                     children: [
                       Text('10'),
                       Text('팔로워'),
                     ],
                   ),
-                  const Column(
+                   Column(
                     children: [
                       Text('23'),
                       Text('팔로잉'),

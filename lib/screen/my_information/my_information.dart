@@ -24,7 +24,7 @@ class MyInformation extends StatelessWidget {
       body: SafeArea(
         child: SizedBox(
           width: MediaQuery.of(context).size.width,
-          child: const Padding(
+          child:  Padding(
               padding: EdgeInsets.symmetric(horizontal: 30.0),
               child: Column(
                 children: [

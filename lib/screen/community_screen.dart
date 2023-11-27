@@ -8,7 +8,7 @@ class CommunityScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return  Column(
       children: [
         SizedBox(height: 10.0),
         StatusBar(comment: '오늘은 애완동물과 어떤 일이 있으셨나요?'),
