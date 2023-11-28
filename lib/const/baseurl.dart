@@ -1,1 +1,1 @@
-final String baseUrl = 'http://192.168.45.131:3000'; // ipconfig를 통해 자신의 로컬 ip넣기
+final String baseUrl = ''; // ipconfig를 통해 자신의 로컬 ip넣기
