@@ -1,4 +1,6 @@
+import 'package:anipet/component/snackbar/snackbar.dart';
 import 'package:anipet/screen/add_mypet/add_mypet_controller.dart';
+import 'package:anipet/screen/login/login_screen.dart';
 import 'package:anipet/screen/main_screen/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,11 +10,12 @@ import '../../component/text_and_textfield.dart';
 import '../../const/colors.dart';
 
 class AddMypetScreen extends StatelessWidget {
-  const AddMypetScreen({Key? key}) : super(key: key);
+  final String userId;
+  const AddMypetScreen({Key? key, required this.userId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final AddMypetController addMypetController = Get.put(AddMypetController());
+    final AddMypetController addMypetController = Get.put(AddMypetController(userId: userId));
     return Scaffold(
       backgroundColor: MAIN_IVORY_COLOR,
       body: SafeArea(
@@ -33,9 +36,11 @@ class AddMypetScreen extends StatelessWidget {
                 ),
                 BottomButton(
                   buttonName: 'Add My Pet',
-                  onPressed: () {
-                    Get.offAll(() => const MainScreen());
-                    addMypetController.onAddMypetButtonClicked();
+                  onPressed: () async {
+                    await addMypetController.onAddMypetButtonClicked();
+                    showSnackBar(context, '펫 정보가 저장되었습니다. 다시 로그인 해주세요.');
+                    Get.offAll(() => const LogInScreen());
+
                   },
                 ),
               ],
@@ -93,7 +98,7 @@ class _Input extends StatelessWidget {
             ),
             TextAndTextField(
               textString: 'Age',
-              isObsecureTextTrue: true,
+              isObsecureTextTrue: false,
               textEditingController: ageTextController,
             ),
             const SizedBox(

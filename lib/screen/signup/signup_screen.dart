@@ -1,3 +1,4 @@
+import 'package:anipet/component/snackbar/snackbar.dart';
 import 'package:anipet/screen/add_mypet/add_mypet_screen.dart';
 import 'package:anipet/screen/signup/signup_screen_controller.dart';
 import 'package:flutter/material.dart';
@@ -27,15 +28,18 @@ class SignUpScreen extends StatelessWidget {
               children: [
                 //const BigLogo(),
                 _Input(
-                  emailTextController: signupScreenController.emailTextController,
+                  nameTextController: signupScreenController.nameTextController,
+                  phoneTextController: signupScreenController.phoneTextController,
                   idTextController: signupScreenController.idTextController,
                   passwordTextController: signupScreenController.passwordTextController,
                 ),
                 BottomButton(
                   buttonName: 'SIGNUP',
-                  onPressed: () {
-                    Get.to(() => const AddMypetScreen());
-                    signupScreenController.onSignupButtonClick();
+                  onPressed: () async {
+                    await signupScreenController.onSignupButtonClick();
+                    showSnackBar(context, '환영합니다. 펫 정보를 입력해주세요');
+                    Get.to(() => AddMypetScreen(userId: signupScreenController.idTextController.text)); // userId도 같이 넘겨줌
+
                   },
                 ),
               ],
@@ -48,11 +52,12 @@ class SignUpScreen extends StatelessWidget {
 }
 
 class _Input extends StatelessWidget {
-  final TextEditingController emailTextController;
+  final TextEditingController nameTextController;
+  final TextEditingController phoneTextController;
   final TextEditingController idTextController;
   final TextEditingController passwordTextController;
 
-  const _Input({required this.emailTextController, required this.idTextController, required this.passwordTextController, Key? key}) : super(key: key);
+  const _Input({required this.nameTextController, required this.phoneTextController, required this.idTextController, required this.passwordTextController, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +83,7 @@ class _Input extends StatelessWidget {
             TextAndTextField(
               textString: 'Name',
               isObsecureTextTrue: false,
-              textEditingController: emailTextController,
+              textEditingController: nameTextController,
             ),
             const SizedBox(
               height: 30.0,
@@ -86,7 +91,7 @@ class _Input extends StatelessWidget {
             TextAndTextField(
               textString: 'Phone Number',
               isObsecureTextTrue: false,
-              textEditingController: emailTextController,
+              textEditingController: phoneTextController,
             ),
             const SizedBox(
               height: 30.0,

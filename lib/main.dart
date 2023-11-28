@@ -1,15 +1,21 @@
+import 'package:anipet/screen/main_screen/main_screen.dart';
 import 'package:anipet/screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:logger/logger.dart';
 
-void main() {
+import 'manager/token_manager.dart';
+import 'manager/userId_manager.dart';
+
+Future<void> main() async {
   Get.put(Common());
+  WidgetsFlutterBinding.ensureInitialized();
+  String? token = await TokenManager.getToken();
   runApp(
-    const GetMaterialApp(
+     GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: token != null && !TokenManager.isTokenExpired(token) ? MainScreen() : SplashScreen(),
     ),
   );
 }

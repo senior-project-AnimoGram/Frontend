@@ -1,3 +1,4 @@
+import 'package:anipet/screen/hambuger_button/hamburger_button_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:anipet/const/identification.dart';
@@ -48,8 +49,9 @@ class HamburgerButton extends StatelessWidget {
                     color: Colors.grey[850],
                   ),
                   title: const Text('나의 정보'),
-                  onTap: () {
-                    Get.to(() => const MyInformation());
+                  onTap: () async {
+                    Map<String?, dynamic>? data = await HamburgerButtonController(userId: userId).onMyInfoButtonClick();
+                    Get.to(() => MyInformation(data: data));
                   },
                   trailing: const Icon(Icons.add),
                 ),

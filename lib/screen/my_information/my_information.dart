@@ -1,9 +1,17 @@
+import 'package:anipet/component/snackbar/snackbar.dart';
 import 'package:anipet/const/identification.dart';
+import 'package:anipet/manager/name_manager.dart';
+import 'package:anipet/screen/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../manager/token_manager.dart';
+import '../../manager/userId_manager.dart';
 
 class MyInformation extends StatelessWidget {
-  const MyInformation({Key? key}) : super(key: key);
+  const MyInformation({Key? key, required this.data}) : super(key: key);
 
+  final Map<String?, dynamic>? data;
   @override
   Widget build(BuildContext context) {
     const TextStyle categoryStyle = TextStyle(
@@ -24,101 +32,129 @@ class MyInformation extends StatelessWidget {
       body: SafeArea(
         child: SizedBox(
           width: MediaQuery.of(context).size.width,
-          child:  Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30.0),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(0, 30, 0, 20),
-                    child: Row(
-                      children: [
-                        Text(
-                          '회원가입 정보',
-                          style: TextStyle(
-                            fontSize: 17.0,
-                            fontWeight: FontWeight.w500,
-                          ),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30.0),
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.fromLTRB(0, 30, 0, 20),
+                  child: Row(
+                    children: [
+                      Text(
+                        '회원가입 정보',
+                        style: TextStyle(
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w500,
                         ),
-                      ],
+                      ),
+                    ],
+                  ),
+                ),
+                Row(
+                  children: [
+                    SizedBox(
+                      width: categoryWidth,
+                      child: Text(
+                        '이름',
+                        style: categoryStyle,
+                      ),
                     ),
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: categoryWidth,
-                        child: Text(
-                          'Email',
-                          style: categoryStyle,
-                        ),
+                    Text(data?['name'] ?? 'N/A'),
+                  ],
+                ),
+                Row(
+                  children: [
+                    SizedBox(
+                      width: categoryWidth,
+                      child: Text(
+                        'ID',
+                        style: categoryStyle,
                       ),
-                      Text(TEST_EMAIL),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: categoryWidth,
-                        child: Text(
-                          'Id',
-                          style: categoryStyle,
-                        ),
-                      ),
-                      Text(TEST_ID),
-                    ],
-                  ),
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(0, 30, 0, 20),
-                    child: Row(
-                      children: [
-                        Text(
-                          '나의 반려동물',
-                          style: TextStyle(
-                            fontSize: 17.0,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
                     ),
-                  ),
-                  Row(
+                    Text(data?['userId'] ?? 'N/A'),
+                  ],
+                ),
+                Row(
+                  children: [
+                    SizedBox(
+                      width: categoryWidth,
+                      child: Text(
+                        '전화번호',
+                        style: categoryStyle,
+                      ),
+                    ),
+                    Text(data?['phone'] ?? 'N/A'),
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(0, 30, 0, 20),
+                  child: Row(
                     children: [
-                      SizedBox(
-                        width: categoryWidth,
-                        child: Text(
-                          '이름',
-                          style: categoryStyle,
+                      Text(
+                        '나의 반려동물',
+                        style: TextStyle(
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
-                      Text(TEST_PET_NAME),
                     ],
                   ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: categoryWidth,
-                        child: Text(
-                          '종',
-                          style: categoryStyle,
-                        ),
+                ),
+                Row(
+                  children: [
+                    SizedBox(
+                      width: categoryWidth,
+                      child: Text(
+                        '이름',
+                        style: categoryStyle,
                       ),
-                      Text(TEST_BREED),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: categoryWidth,
-                        child: Text(
-                          '나이',
-                          style: categoryStyle,
-                        ),
+                    ),
+                    Text(data?['petName'] ?? 'N/A'),
+                  ],
+                ),
+                Row(
+                  children: [
+                    SizedBox(
+                      width: categoryWidth,
+                      child: Text(
+                        '종',
+                        style: categoryStyle,
                       ),
-                      Text(TEST_AGE),
-                      Text('세'),
-                    ],
+                    ),
+                    Text(data?['breed'] ?? 'N/A'),
+                  ],
+                ),
+                Row(
+                  children: [
+                    SizedBox(
+                      width: categoryWidth,
+                      child: Text(
+                        '나이',
+                        style: categoryStyle,
+                      ),
+                    ),
+                    Text(data?['age'].toString() ?? 'N/A'),
+                    Text('세'),
+                  ],
+                ),
+                Spacer(), // Add Spacer to push the button to the bottom
+                Container(
+                  width: 150,
+                  margin: EdgeInsets.only(bottom: 20),
+                  child: ElevatedButton(
+                    onPressed: () async {
+                      await TokenManager.clearToken();
+                      await UserIdManager.clearUserId();
+                      await NameManager.clearName();
+                      showSnackBar(context, '로그아웃 되었습니다.');
+                      Get.offAll(() => const SplashScreen());
+                    },
+                    child: Text('로그아웃'),
                   ),
-                ],
-              )),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );

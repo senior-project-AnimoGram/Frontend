@@ -3,10 +3,14 @@ import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart' hide Response;
 
+import '../../const/baseurl.dart';
+
 class SignupScreenController extends GetxController {
   Dio dio = Dio();
 
-  TextEditingController emailTextController = TextEditingController();
+  TextEditingController nameTextController = TextEditingController();
+
+  TextEditingController phoneTextController = TextEditingController();
 
   TextEditingController idTextController = TextEditingController();
 
@@ -24,18 +28,22 @@ class SignupScreenController extends GetxController {
     super.onReady();
   }
 
-  void onSignupButtonClick() async {
-    Common.logger.d(emailTextController.text);
+  Future<void> onSignupButtonClick() async {
+    Common.logger.d(nameTextController.text);
+    Common.logger.d(phoneTextController.text);
     Common.logger.d(idTextController.text);
     Common.logger.d(passwordTextController.text);
-
     try {
-      Response response = await dio.post("http://localhost:3000/signup", data: {
-        'email': emailTextController.text,
-        'id': idTextController.text,
+      Response response = await dio.post("$baseUrl/signup", data: {
+        'name': nameTextController.text,
+        'phone': phoneTextController.text,
+        'userId': idTextController.text,
         'password': passwordTextController.text,
       });
-      if (response.statusCode == 200) {
+
+      Common.logger.d(response.statusCode);
+      Common.logger.d(response.data);
+      if (response.statusCode == 201) {
         // 성공적으로 데이터가 서버로 전송되었을 경우 처리할 로직
         Common.logger.d('signup success');
       } else {

@@ -3,6 +3,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart' hide Response;
 
+import '../../const/baseurl.dart';
+
 class AddMypetController extends GetxController {
   Dio dio = Dio();
 
@@ -12,6 +14,8 @@ class AddMypetController extends GetxController {
 
   TextEditingController ageTextController = TextEditingController();
 
+  final String userId;
+  AddMypetController({required this.userId});
   @override
   void onInit() {
     // TODO: implement onInit
@@ -24,17 +28,20 @@ class AddMypetController extends GetxController {
     super.onReady();
   }
 
-  void onAddMypetButtonClicked() async {
+  Future<void> onAddMypetButtonClicked() async {
+    Common.logger.d(userId);
     Common.logger.d(petNameTextController.text);
     Common.logger.d(breedTextController.text);
     Common.logger.d(ageTextController.text);
 
     try {
-      Response response = await dio.post("http://localhost:3000/signup", data: {
-        'email': petNameTextController.text,
-        'id': breedTextController.text,
-        'password': ageTextController.text,
+      Response response = await dio.post("$baseUrl/addpet", data: {
+        'userId': userId,
+        'petName': petNameTextController.text,
+        'breed': breedTextController.text,
+        'age': ageTextController.text,
       });
+      Common.logger.d(response.data);
       if (response.statusCode == 200) {
         // 성공적으로 데이터가 서버로 전송되었을 경우 처리할 로직
         Common.logger.d('signup success');

@@ -1,6 +1,6 @@
 //Signup, Login 정보
-const TEST_ID = 'jsy4407';
-const TEST_EMAIL = 'jsy4407@naver.com';
+const TEST_ID = 'jhk';
+const TEST_NAME = '김재희';
 const TEST_PASSWORD = '1234';
 
 //반려동물 정보

@@ -46,6 +46,8 @@ dependencies:
   convert: ^3.0.1
   logger: ^1.3.0
   image_picker: ^0.8.7+5
+  shared_preferences: ^2.0.7
+  jwt_decoder: ^2.0.1
 
 dev_dependencies:
   flutter_test:

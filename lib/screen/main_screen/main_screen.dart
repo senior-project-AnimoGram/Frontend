@@ -1,6 +1,6 @@
 import 'package:anipet/component/topmenu_bar/topmenu_bar.dart';
 import 'package:anipet/const/colors.dart';
-import 'package:anipet/screen/hamburger_button.dart';
+import 'package:anipet/screen/hambuger_button/hamburger_button.dart';
 import 'package:anipet/screen/main_screen/main_screen_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -21,7 +21,7 @@ class MainScreen extends StatelessWidget {
         backgroundColor: MAIN_BLUE_COLOR,
         elevation: 0,
       ),
-      drawer: const HamburgerButton(),
+      drawer: HamburgerButton(),
       body: Column(
         children: [
           const TopMenuBar(),
