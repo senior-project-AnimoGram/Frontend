@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../component/post_list.dart';
+import '../component/post/post_list.dart';
 import '../component/status_bar.dart';
 
 class CommunityScreen extends StatelessWidget {

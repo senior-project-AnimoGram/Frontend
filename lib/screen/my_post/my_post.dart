@@ -1,4 +1,4 @@
-import 'package:anipet/component/post_component.dart';
+import 'package:anipet/component/post/post_component.dart';
 import 'package:anipet/const/identification.dart';
 import 'package:anipet/screen/main_screen/main_screen.dart';
 import 'package:anipet/screen/my_post/my_post_controller.dart';

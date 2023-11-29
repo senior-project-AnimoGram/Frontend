@@ -6,14 +6,14 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class MainScreenController extends GetxController {
-  RxString appBarText = "주변 특수동물병원 안내".obs;
+  RxString appBarText = "커뮤니티".obs;
 
   RxList<Widget> pages = RxList();
-  RxInt pageIndex = 0.obs;
+  RxInt pageIndex = 2.obs;
 
-  RxBool hospitalState = true.obs;
+  RxBool hospitalState = false.obs;
   RxBool adoptionState = false.obs;
-  RxBool communityState = false.obs;
+  RxBool communityState = true.obs;
   RxBool tipState = false.obs;
 
   @override

@@ -4,6 +4,8 @@ import 'package:anipet/screen/add_post/add_post_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../main_screen/main_screen.dart';
+
 class AddPostScreen extends StatelessWidget {
   const AddPostScreen({Key? key}) : super(key: key);
 
@@ -68,7 +70,6 @@ class AddPostScreen extends StatelessWidget {
                 textString: 'Content',
                 isObsecureTextTrue: false,
                 textEditingController: addPostController.contentTextEditingController,
-
               ),
               const SizedBox(
                 height: 30.0,
@@ -76,11 +77,8 @@ class AddPostScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () async {
                   bool result = await addPostController.onAddPostButtonClicked();
-                  // Get.offAll(() => const MainScreen());
                   if (result) {
-                    Get.back();
-                  } else {
-                    Get.snackbar("API 오류", "네트워크 연결을 확인해주세요", backgroundColor: Colors.white);
+                    Get.offAll(() => const MainScreen());
                   }
                 },
                 style: ElevatedButton.styleFrom(
