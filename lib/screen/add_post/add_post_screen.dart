@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../main_screen/main_screen.dart';
+import '../add_post/filter_screen.dart';
 
 class AddPostScreen extends StatelessWidget {
   const AddPostScreen({Key? key}) : super(key: key);
@@ -35,7 +36,8 @@ class AddPostScreen extends StatelessWidget {
               _TextAndTextField(
                 textString: 'Title',
                 isObsecureTextTrue: false,
-                textEditingController: addPostController.titleTextEditingController,
+                textEditingController:
+                    addPostController.titleTextEditingController,
               ),
               const SizedBox(
                 height: 30.0,
@@ -50,33 +52,32 @@ class AddPostScreen extends StatelessWidget {
                       ),
                       child: const Text('사진 추가'),
                     )
-                  : Container(
-                      margin: const EdgeInsets.only(bottom: 30),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: SizedBox(
-                          height: 200,
-                          child: Image.file(
-                            File(addPostController.image.value!.path),
-                            fit: BoxFit.contain,
-                          ),
+                  : ElevatedButton(
+                        onPressed: () {
+                          Get.to(() => const FilterScreen());
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black,
                         ),
+                        child: const Text('필터 추가'),
                       ),
-                    )),
+                    ),
               const SizedBox(
                 height: 30.0,
               ),
               _TextAndTextField(
                 textString: 'Content',
                 isObsecureTextTrue: false,
-                textEditingController: addPostController.contentTextEditingController,
+                textEditingController:
+                    addPostController.contentTextEditingController,
               ),
               const SizedBox(
                 height: 30.0,
               ),
               ElevatedButton(
                 onPressed: () async {
-                  bool result = await addPostController.onAddPostButtonClicked();
+                  bool result =
+                      await addPostController.onAddPostButtonClicked();
                   if (result) {
                     Get.offAll(() => const MainScreen());
                   }

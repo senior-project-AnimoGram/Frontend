@@ -1,7 +1,6 @@
 import 'package:anipet/const/baseurl.dart';
 import 'package:anipet/main.dart';
 import 'package:anipet/manager/userId_manager.dart';
-import 'package:anipet/screen/my_post/my_post_controller.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Response, FormData, MultipartFile;
