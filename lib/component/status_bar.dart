@@ -15,7 +15,7 @@ class StatusBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(() => const AddPostScreen());
+        Get.to(() =>  AddPostScreen());
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),

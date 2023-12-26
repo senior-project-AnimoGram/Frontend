@@ -4,14 +4,18 @@ import 'package:anipet/screen/add_post/add_post_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../const/baseurl.dart';
 import '../main_screen/main_screen.dart';
 
 class AddPostScreen extends StatelessWidget {
-  const AddPostScreen({Key? key}) : super(key: key);
-
+  AddPostScreen({Key? key, dynamic? decorate_image_path}) : super(key: key) {
+    decorateImagePath.value = decorate_image_path ?? '';
+  }
+  final RxString decorateImagePath = ''.obs;
   @override
   Widget build(BuildContext context) {
     final AddPostController addPostController = Get.put(AddPostController());
+
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
@@ -40,8 +44,21 @@ class AddPostScreen extends StatelessWidget {
               const SizedBox(
                 height: 30.0,
               ),
-              Obx(() => addPostController.image.value == null
-                  ? ElevatedButton(
+              Obx(() => decorateImagePath.value.isNotEmpty
+                  ? Container(
+                margin: const EdgeInsets.only(bottom: 30),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: SizedBox(
+                    height: 200,
+                    child: Image.network(
+                      baseUrl + '/' + decorateImagePath.value.trim(),
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              )
+                  : ElevatedButton(
                 onPressed: () {
                   addPostController.addImageButtonOnClicked();
                 },
@@ -49,19 +66,6 @@ class AddPostScreen extends StatelessWidget {
                   backgroundColor: Colors.black,
                 ),
                 child: const Text('사진 추가'),
-              )
-                  : Container(
-                margin: const EdgeInsets.only(bottom: 30),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: SizedBox(
-                    height: 200,
-                    child: Image.file(
-                      File(addPostController.image.value!.path),
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                ),
               )),
               const SizedBox(
                 height: 30.0,
@@ -76,7 +80,7 @@ class AddPostScreen extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () async {
-                  bool result = await addPostController.onAddPostButtonClicked();
+                  bool result = await addPostController.onAddPostButtonClicked(decorateImagePath.value.trim());
                   if (result) {
                     Get.offAll(() => const MainScreen());
                   }
@@ -93,6 +97,8 @@ class AddPostScreen extends StatelessWidget {
     );
   }
 }
+
+
 
 class _TextAndTextField extends StatelessWidget {
   final String textString;
