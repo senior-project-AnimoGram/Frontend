@@ -33,7 +33,7 @@ class TipComponent extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.0)),
         child: Padding(
           padding: const EdgeInsets.symmetric(
-            horizontal: 15.0,
+            horizontal: 10.0,
             vertical: 10.0,
           ),
           child: Row(
@@ -42,7 +42,7 @@ class TipComponent extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    width: 245.0,
+                    width: 210.0,
                     child: Text(
                       tipTitle,
                       style: const TextStyle(
@@ -54,7 +54,7 @@ class TipComponent extends StatelessWidget {
                     height: 5.0,
                   ),
                   SizedBox(
-                    width: 230.0,
+                    width: 200.0,
                     child: Text(tipContent),
                   ),
                   const SizedBox(
@@ -65,7 +65,7 @@ class TipComponent extends StatelessWidget {
               Image.network(
                 imageUrl,
                 height: 85.0,
-                width: 85.0,
+                width: 90.0,
                 fit: BoxFit.cover,
               ),
             ],

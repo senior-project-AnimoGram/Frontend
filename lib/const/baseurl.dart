@@ -1,1 +1,1 @@
-final String baseUrl = 'http://192.168.45.169:3000'; // ipconfig를 통해 자신의 로컬 ip + 사용 port넣기
+final String baseUrl = 'http://192.168.246.111:3000'; // ipconfig를 통해 자신의 로컬 ip + 사용 port넣기

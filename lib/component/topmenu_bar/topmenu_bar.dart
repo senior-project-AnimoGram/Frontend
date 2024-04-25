@@ -24,7 +24,7 @@ class TopMenuBar extends StatelessWidget {
                   onPressed: () {
                     MainScreenController mainScreenController = Get.find<MainScreenController>();
                     mainScreenController.pageIndex.value = 0;
-                    mainScreenController.appBarText.value = "주변 특수동물병원 안내";
+                    mainScreenController.appBarText.value = "주변 동물병원 안내";
 
                     mainScreenController.hospitalState.value = true;
                     mainScreenController.adoptionState.value = false;
