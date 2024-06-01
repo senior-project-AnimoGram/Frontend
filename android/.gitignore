@@ -12,4 +12,4 @@ key.properties
 **/*.keystore
 **/*.jks
 
-/app/src/main/AndroidManifest.xml
+/app/src/main
