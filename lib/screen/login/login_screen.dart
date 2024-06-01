@@ -44,18 +44,18 @@ class LogInScreen extends StatelessWidget {
                     }
                     Map<String, dynamic>? data = await loginScreenController.onLoginButtonClick();
                     String? userId;
-                    String? name;
+                    String? nickname;
                     String? token;
                     loginScreenController.idTextController.text = "";
                     loginScreenController.passwordTextController.text = "";
                     if(data!.isNotEmpty){
                       userId = data['userId'];
-                      name = data['name'];
+                      nickname = data['nickname'];
                       token = data['token'];
                     }
                     if (token != null) {
                       await UserIdManager.saveUserId(userId!);
-                      await NameManager.saveName(name!);
+                      await NameManager.saveName(nickname!);
                       await TokenManager.saveToken(token!);
                       Get.offAll(() => const MainScreen());
                     }

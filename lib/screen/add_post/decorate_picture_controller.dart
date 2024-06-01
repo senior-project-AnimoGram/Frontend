@@ -7,7 +7,6 @@ import '../../const/baseurl.dart';
 import '../../main.dart';
 import '../../manager/userId_manager.dart';
 
-
 class DecorateController extends GetxController {
 
   Future<String?> putSticker(XFile? photo, int selectedFilterIndex) async{
@@ -22,6 +21,7 @@ class DecorateController extends GetxController {
           filename: userId! + '_' + photo!.name,
         ),
       });
+
       Response response = await dio.post(
         "$baseUrl/putsticker",
         data: data

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class PostComponent extends StatelessWidget {
   final String id;
   final String profileImg;
@@ -8,6 +9,7 @@ class PostComponent extends StatelessWidget {
   final String content;
   final int numberOfComment;
   final int numberOflikes;
+  final String address;
 
   const PostComponent({
     required this.id,
@@ -17,8 +19,10 @@ class PostComponent extends StatelessWidget {
     required this.content,
     required this.numberOfComment,
     required this.numberOflikes,
+    required this.address,
     Key? key,
   }) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -67,9 +71,19 @@ class PostComponent extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 ),
               ),
+              const SizedBox(
+                width: 20.0,
+              ),
+              Text(
+                address,
+                style: const TextStyle(
+                  fontSize: 10.0,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
             ],
           ),
-          Image.network(
+          Image.asset(
             imageAddress,
             //height: 380.0,
             width: MediaQuery.of(context).size.width,

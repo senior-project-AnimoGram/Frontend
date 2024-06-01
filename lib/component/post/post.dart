@@ -8,6 +8,8 @@ class Post {
   final String content;
   final int commentNum;
   final int goodNum;
+  final String address;
+
 
   Post({
     required this.id,
@@ -16,5 +18,6 @@ class Post {
     required this.content,
     required this.commentNum,
     required this.goodNum,
+    required this.address,
   });
 }

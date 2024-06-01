@@ -14,8 +14,8 @@ class PostController {
       Common.logger.d(data);
       if (response.statusCode == 200) {
         final List<dynamic> data = response.data;
-        return data.map((item) => Post(id: item['userId'], imagePath: baseUrl + '/' + item['imagePath'], title: item['title'], content: item['content'],
-            commentNum: item['commentNum'], goodNum: item['goodNum'])).toList();
+        return data.map((item) => Post(id: item['user_id'], imagePath: item['imagePath'], title: item['title'], content: item['content'],
+            commentNum: item['commentNum'], goodNum: item['goodNum'], address: item['address'])).toList();
       } else {
         throw Exception('게시물 로드 실패');
       }

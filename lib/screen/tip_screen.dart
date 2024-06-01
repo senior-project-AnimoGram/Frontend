@@ -32,10 +32,10 @@ class TipList extends StatelessWidget {
           child:  Column(
             children: [
               TipComponent(
-                tipTitle: '이구아나가 잘 먹지 않아요',
-                tipContent: '이구아나에게 필요한 사육 환경과 먹이를 잘 챙겨 주지 않으면...',
-                imageUrl: 'http://image.dongascience.com/Photo/2019/01/8fcd4224d019800a2023103a8cb7730e.jpg',
-                webviewUrl: 'https://www.dongascience.com/news.php?idx=26162',
+                tipTitle: '청담우리동물병원',
+                tipContent: '임신한 반려묘를 돌볼 때 , "이것"만 기억하자',
+                imageUrl: 'http://www.chungdamah.co.kr/data/editor/2201/thumb-f232e4f602618ab01b4b096915922cdb_1641279871_5088_900x900.jpg',
+                webviewUrl: 'https://m.blog.naver.com/nanabh01/221593068158',
               ),
               SizedBox(height: 20.0),
               TipComponent(
@@ -61,10 +61,17 @@ class TipList extends StatelessWidget {
               ),
               SizedBox(height: 20.0),
               TipComponent(
-                tipTitle: '청담우리동물병원',
-                tipContent: '임신한 반려묘를 돌볼 때 , "이것"만 기억하자',
-                imageUrl: 'http://www.chungdamah.co.kr/data/editor/2201/thumb-f232e4f602618ab01b4b096915922cdb_1641279871_5088_900x900.jpg',
-                webviewUrl: 'https://m.blog.naver.com/nanabh01/221593068158',
+                tipTitle: '이구아나가 잘 먹지 않아요',
+                tipContent: '이구아나에게 필요한 사육 환경과 먹이를 잘 챙겨 주지 않으면...',
+                imageUrl: 'http://image.dongascience.com/Photo/2019/01/8fcd4224d019800a2023103a8cb7730e.jpg',
+                webviewUrl: 'https://www.dongascience.com/news.php?idx=26162',
+              ),
+              SizedBox(height: 20.0),
+              TipComponent(
+                tipTitle: '비만반려동물 증가…',
+                tipContent: '반려동물 체중 줄이는 팁',
+                imageUrl: 'https://health.chosun.com/site/data/img_dir/2024/01/18/2024011801397_0.jpg',
+                webviewUrl: 'https://health.chosun.com/site/data/html_dir/2024/01/18/2024011801400.html',
               ),
               SizedBox(height: 20.0),
             ],

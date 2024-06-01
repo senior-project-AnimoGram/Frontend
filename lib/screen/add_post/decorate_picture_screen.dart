@@ -7,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
 
 import 'decorate_picture_controller.dart';
 
+
 class DecorateScreen extends StatefulWidget {
   final DecorateController addPostController = Get.put(DecorateController());
   final XFile? photo;
@@ -38,10 +39,12 @@ class _DecorateScreenState extends State<DecorateScreen> {
                 ),
                 barrierDismissible: false, // 사용자가 다이얼로그 외부를 터치하여 닫지 못하게 함
               );
-              dynamic? result = await widget.addPostController.putSticker(widget.photo, selectedFilterIndex);
-              if (result != null){
-                Get.to(() => AddPostScreen(decorate_image_path: result));
-              }
+              // dynamic? result = await widget.addPostController.putSticker(widget.photo, selectedFilterIndex);
+              // if (result != null){
+              //   Get.to(() => AddPostScreen(decorate_image_path: result));
+              // }
+
+                Get.to(() => AddPostScreen(decorate_image_path: "asset/img/filteredDog.jpg"));
             },
           ),
         ],

@@ -81,7 +81,7 @@ class _Input extends StatelessWidget {
               height: 30.0,
             ),
             TextAndTextField(
-              textString: 'Name',
+              textString: 'nickname',
               isObsecureTextTrue: false,
               textEditingController: nameTextController,
             ),

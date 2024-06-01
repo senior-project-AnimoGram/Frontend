@@ -59,7 +59,7 @@ class MyInformation extends StatelessWidget {
                         style: categoryStyle,
                       ),
                     ),
-                    Text(data?['name'] ?? 'N/A'),
+                    Text('조윤상'),
                   ],
                 ),
                 Row(
@@ -71,7 +71,7 @@ class MyInformation extends StatelessWidget {
                         style: categoryStyle,
                       ),
                     ),
-                    Text(data?['userId'] ?? 'N/A'),
+                    Text('jsy4407' ?? 'N/A'),
                   ],
                 ),
                 Row(
@@ -83,7 +83,7 @@ class MyInformation extends StatelessWidget {
                         style: categoryStyle,
                       ),
                     ),
-                    Text(data?['phone'] ?? 'N/A'),
+                    Text('010-0000-0000'),
                   ],
                 ),
                 Padding(
@@ -109,7 +109,7 @@ class MyInformation extends StatelessWidget {
                         style: categoryStyle,
                       ),
                     ),
-                    Text(data?['petName'] ?? 'N/A'),
+                    Text('우유'),
                   ],
                 ),
                 Row(
@@ -121,7 +121,7 @@ class MyInformation extends StatelessWidget {
                         style: categoryStyle,
                       ),
                     ),
-                    Text(data?['breed'] ?? 'N/A'),
+                    Text('사모예드'),
                   ],
                 ),
                 Row(
@@ -133,7 +133,7 @@ class MyInformation extends StatelessWidget {
                         style: categoryStyle,
                       ),
                     ),
-                    Text(data?['age'].toString() ?? 'N/A'),
+                    Text('7'),
                     Text('세'),
                   ],
                 ),

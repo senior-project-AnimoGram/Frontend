@@ -127,6 +127,7 @@ class _PostListState extends State<PostList> {
                           content: post.content,
                           numberOfComment: post.commentNum,
                           numberOflikes: post.goodNum,
+                          address: post.address,
                         ),
                     ],
                   ),

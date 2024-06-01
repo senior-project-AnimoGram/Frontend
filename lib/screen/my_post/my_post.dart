@@ -32,6 +32,7 @@ class MyPost extends StatelessWidget {
                 content: TEST_CONTENT,
                 numberOfComment: 6,
                 numberOflikes: 15,
+                address: "경기도 성남시 수정구 성남대로 1342",
               ),
             ),
           ],
@@ -107,19 +108,19 @@ class MyProfile extends StatelessWidget {
                       ),
                     ),
                   ),
-                   Column(
+                   const Column(
                     children: [
                       Text('1'),
                       Text('게시물'),
                     ],
                   ),
-                   Column(
+                   const Column(
                     children: [
                       Text('10'),
                       Text('팔로워'),
                     ],
                   ),
-                   Column(
+                   const Column(
                     children: [
                       Text('23'),
                       Text('팔로잉'),

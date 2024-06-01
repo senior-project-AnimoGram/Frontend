@@ -25,10 +25,12 @@ class LoginScreenController extends GetxController {
       if (response.statusCode == 200) {
         // 성공적으로 데이터가 서버로 전송되었을 경우 처리할 로직
         Common.logger.d('login success');
+        Common.logger.d(response.data);
         final Map<String, dynamic> data = response.data;
         final String userId = data['userId'];
-        final String name = data['name'];
+        final String name = data['nickname'];
         final String token = data['token'];
+
         List<String> loginData = [userId, name, token];
         return data;
       } else {
